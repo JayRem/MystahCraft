@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Mystah-Craft{% endblock %}</title>
+        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    	<header>
+    		<div id="header" class="main">
+    		<h1></h1>
+    		<div id="auth">
+    			{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    				<span id="login-name">Bonjour {{ app.user.username }}</span> <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+    			{% else %}
+    				<a href="{{ path('fos_user_security_login') }}">Connexion</a>
+    			{% endif %}
+    		</div>
+    		</div>
+    		<menu>
+    			<ul class="main">
+    				<li><a href="{{ path('mystah_craft_site_homepage') }}">Accueil</a></li>
+    				<li><a href="{{ path('mystah_craft_site_joueurs') }}">Joueurs</a></li>
+    				<li><a href="{{ path('mystah_craft_site_histoire') }}">Histoire</a></li>
+    				<li><a href="{{ path('mystah_craft_site_screen') }}">Screenshots</a></li>
+    				<li><a href="{{ path('mystah_craft_site_liens') }}">Forum et Liens</a></li>
+    			</ul>
+    		</menu>
+    	</header>
+    	<div id="container">
+    		<div id="content" class="main">
+    			<div id="contenu">
+	        		{% block body %}{% endblock %}
+	        	</div>
+	        </div>
+        </div>
+        <footer class="main">
+        	<a href="{{ path('admin_homepage') }}">Administration</a>
+        	<div id="copyright">
+        		&copy; Copyright 2013 Mystah-Craft. Site réalisé par Jérémy Safont.
+        	</div>
+        </footer>
+        {% block javascripts %}
+			<script src="js/jquery-1.9.1.js"></script>
+			<script src="js/jquery-ui-1.10.3.custom.js"></script>
+        {% endblock %}
+    </body>
+</html>

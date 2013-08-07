@@ -1,0 +1,14 @@
+{% extends 'MystahCraftAdminBundle::layout.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Modifier règle n°{{ rule.id }}
+{% endblock %}
+
+{% block contenu %}
+	<h1>Modifier règle n°{{ rule.id }}</h1>
+	<form method="post"{{ form_enctype(form) }}>
+		{{ form_errors(form) }}
+		{{ form_rest(form) }}
+		<input type="submit" />
+	</form>
+{% endblock %}

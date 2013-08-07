@@ -1,0 +1,19 @@
+{% extends 'MystahCraftSiteBundle::layout.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Accueil
+{% endblock %}
+
+{% block body %}
+	<div id ="rules-mystah">
+		{% for rule in rules %}
+			<div>
+				{{ rule.regle|nl2br }}
+			</div>
+		{% endfor %}
+	</div>
+	<div id="index-content">
+		<h1>Bienvenue sur Mystah-Craft !</h1>
+		<h2>Vous êtes sur le point de découvrir le monde de Mystalia</h2>
+	</div>
+{% endblock %}

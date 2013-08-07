@@ -1,0 +1,30 @@
+admin_homepage:
+    pattern: /
+    defaults: { _controller: "MystahCraftAdminBundle:Voir:index" }
+    
+admin_rules:
+    pattern: /rules
+    defaults: { _controller: "MystahCraftAdminBundle:Voir:rules" }
+    
+admin_rule:
+    pattern: /rule/{id}
+    defaults: { _controller: "MystahCraftAdminBundle:Voir:rule" }
+    requirements:
+        id: \d+
+
+admin_ajouter_rule:
+    pattern:  /rules/ajouter
+    defaults: { _controller: "MystahCraftAdminBundle:Ajouter:rules" }
+
+    
+admin_modifier_rule:
+    pattern:  /rules/modifier/{id}
+    defaults: { _controller: "MystahCraftAdminBundle:Modifier:rules" }
+    requirements:
+        id: \d+
+        
+admin_supprimer_rule:
+    pattern:  /rules/supprimer/{id}
+    defaults: { _controller: "MystahCraftAdminBundle:Modifier:rules" }
+    requirements:
+        id: \d+

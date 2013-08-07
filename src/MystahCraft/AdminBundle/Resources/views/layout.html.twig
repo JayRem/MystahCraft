@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Site
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<ul>
+		<li><a href="{{ path('admin_homepage') }}">Administration</a></li>
+		<li><a href="{{ path('admin_rules') }}">Règles du serveur</a></li>
+	</ul>
+	{% block contenu %}
+	{% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+{% endblock %}

@@ -1,0 +1,171 @@
+@CHARSET "ISO-8859-1";
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+body
+{
+	font-family: arial;
+	font-size: 12px;
+	background: #8d8964;
+	color: #9a6213;
+}
+
+body h1
+{
+	color: #442b08;
+}
+
+body h2
+{
+	color: #6b440b;
+}
+
+body p
+{
+	
+}
+
+header
+{
+	background: url("../images/header-background.jpg");
+}
+
+header #header
+{
+	height: 200px;
+	position: relative;
+	background: url('../images/header-mystahcraft.jpg')
+}
+
+header #header h1
+{
+}
+
+header #header #auth
+{
+	position: absolute;
+	right : 5px;
+	bottom: 0;
+	padding: 5px 10px 5px 10px;
+	background: #cf903c;
+	border: #633e12 5px solid;
+    -webkit-border-radius: 5px;
+    border-radius: 20px 10px 10px 0;
+    color: #fff;
+}
+
+header #header #auth #login-name
+{
+	margin-right: 20px;
+}
+
+header #header #auth a
+{
+	color: #831d1d;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.main
+{
+	width: 980px;
+	margin: auto;
+}
+
+menu 
+{
+	background: url('../images/frise-menu.png');
+}
+
+menu ul
+{
+	list-style: none;
+	height: 30px;
+}
+
+menu ul li
+{
+	float: left;
+	margin: 3px 10px 0 0;
+}
+
+menu ul li a
+{
+	font-weight: bold;
+	color: #fdf8ad;
+	display: block;
+	padding: 5px;
+	text-decoration: none;
+	background: #b5af81;
+	-webkit-box-shadow: inset -3px -2px 20px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: inset -3px -2px 20px 0px rgba(0, 0, 0, 0.5);
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+menu ul li a:hover
+{
+	color: #fff;
+	-webkit-box-shadow: inset 3px 2px 20px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: inset 3px 2px 20px 0px rgba(0, 0, 0, 0.5);
+}
+
+menu ul:after
+{
+	content: '.';
+	display: block;
+	clear: both;
+	visibility: hidden;
+	height: 0;
+	line-height: 0;
+}
+
+#container
+{
+	background: url('../images/bas-frise-menu.png') repeat-x #f8f6d8;
+	min-height: 300px;
+}
+
+#content
+{
+}
+
+#contenu
+{
+	padding: 20px;
+}
+
+#contenu #rules-mystah
+{
+	width: 20%;
+	float: left;
+}
+
+#contenu #index-content
+{
+}
+
+#contenu:AFTER
+{
+	content: '.';
+	clear: both;
+	visibility: hidden;
+	display: block;
+}
+
+footer
+{
+	padding: 10px;
+	background: #8d8964
+}
+
+footer #copyright
+{
+	color: #f8f6d8;
+	display: table;
+	margin: auto;
+}

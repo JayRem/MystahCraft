@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+			"path": "/C/wamp/www/MystahCraft"
+		}
+	],
+	"settings":
+	{
+		"SymfonyCommander":
+		{
+			"base_directory": "/C/wamp/www/MystahCraft"
+		}
+	}
+}

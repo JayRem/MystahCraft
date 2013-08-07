@@ -1,0 +1,19 @@
+mystah_craft_site_homepage:
+    pattern:  /
+    defaults: { _controller: "MystahCraftSiteBundle:Default:index" }
+
+mystah_craft_site_joueurs:
+    pattern:  /joueurs
+    defaults: { _controller: "MystahCraftSiteBundle:Default:joueurs" }
+    
+mystah_craft_site_histoire:
+    pattern:  /histoire
+    defaults: { _controller: "MystahCraftSiteBundle:Default:histoire" }
+
+mystah_craft_site_screen:
+    pattern:  /screenshots
+    defaults: { _controller: "MystahCraftSiteBundle:Default:screen" }
+    
+mystah_craft_site_liens:
+    pattern:  /liens
+    defaults: { _controller: "MystahCraftSiteBundle:Default:liens" }
