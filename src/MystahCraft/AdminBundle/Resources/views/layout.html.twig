@@ -1,5 +1,23 @@
 {% extends '::base.html.twig' %}
 
+
+{% if form is defined %}
+	{% form_theme form _self %}
+	
+	{% block form_row %}
+	{% spaceless %}
+	    <div class="form-group">
+	        {{ form_label(form, null, {'label_attr' : {'class' : 'col-lg-2 control-label'}}) }}
+	        {{ form_errors(form) }}
+	        <div class="col-lg-10">
+	        	{{ form_widget(form, {'attr' : {'class' : 'form-control'}}) }}
+	        </div>
+	    </div>
+	{% endspaceless %}
+	{% endblock form_row %}
+{% endif %}
+
+
 {% block title %}
 	{{ parent() }} - Site
 {% endblock %}
@@ -7,6 +25,7 @@
 {% block stylesheets %}
 	{{ parent() }}
 {% endblock %}
+
 
 {% block body %}
 	<ul>

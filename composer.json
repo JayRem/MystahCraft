@@ -7,9 +7,11 @@
 	],
 	"require" : {
 		"symfony/symfony" : "2.3.*",
+		"doctrine/doctrine-fixtures-bundle" : "master-dev",
 		"friendsofsymfony/user-bundle" : "2.0.*@dev",
 		"symfony/swiftmailer-bundle" : "2.3.*",
 		"doctrine/orm" : ">=2.2.3,<2.4-dev",
+		"doctrine/data-fixtures" : "master-dev",
 		"symfony/assetic-bundle" : "2.3.*",
 		"incenteev/composer-parameter-handler" : "~2.0",
 		"twig/extensions" : "1.0.*",

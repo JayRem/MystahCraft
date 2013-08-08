@@ -3,16 +3,16 @@
 namespace MystahCraft\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use MystahCraft\SiteBundle\Entity\Rules;
-use MystahCraft\SiteBundle\Form\RulesType;
 use Monolog\Logger;
+use MystahCraft\SiteBundle\Entity\Contenus;
+use MystahCraft\SiteBundle\Form\ContenusType;
 
 class ModifierController extends Controller
 {    
-    public function rulesAction(Rules $rule)
+    public function rulesAction(Contenus $rule)
     {	
     	$em = $this->getDoctrine()->getManager();
-    	$form = $this->createForm(new RulesType(), $rule);
+    	$form = $this->createForm(new ContenusType(), $rule);
     	
     	$request = $this->getRequest();
     	

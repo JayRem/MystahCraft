@@ -3,8 +3,8 @@
 namespace MystahCraft\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use MystahCraft\SiteBundle\Entity\Rules;
-use MystahCraft\SiteBundle\Form\RulesType;
+use MystahCraft\SiteBundle\Entity\Contenus;
+use MystahCraft\SiteBundle\Form\ContenusType;
 
 class AjouterController extends Controller
 {    
@@ -12,9 +12,9 @@ class AjouterController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
     	
-    	$rule = new Rules();
+    	$rule = new Contenus();
     	
-    	$form = $this->createForm(new RulesType(), $rule);
+    	$form = $this->createForm(new ContenusType(), $rule);
     	
     	$request = $this->getRequest();
     	

@@ -1,13 +1,27 @@
 {% extends 'MystahCraftAdminBundle::layout.html.twig' %}
 
+{% block stylesheets %}
+	{{ parent() }}
+	<link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}"> 
+{% endblock %}
+
 {% block title %}
 	{{ parent() }} - Ajout de règle
 {% endblock %}
 
 {% block body %}
-	<form method="post"{{ form_enctype(form) }}>
+	<form class="form-horizontal" method="post"{{ form_enctype(form) }}>
 		{{ form_errors(form) }}
 		{{ form_rest(form) }}
-		<input type="submit" />
+		<div class="form-group">
+			<div class="col-lg-offset-2 col-lg-10">
+				<input type="submit" class="btn btn-default" />
+			</div>
+		</div>
 	</form>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="{{ asset("js/bootstrap.js") }}"></script>
 {% endblock %}

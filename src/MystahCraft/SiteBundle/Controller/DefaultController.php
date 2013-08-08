@@ -10,7 +10,7 @@ class DefaultController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
     	
-    	$rules = $em->getRepository('MystahCraftSiteBundle:Rules')->findAll();
+    	$rules = $em->getRepository('MystahCraftSiteBundle:Contenus')->findAll();
     	
         return $this->render('MystahCraftSiteBundle:Default:index.html.twig', array(
         	'rules' => $rules

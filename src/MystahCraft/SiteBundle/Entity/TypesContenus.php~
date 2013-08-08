@@ -5,12 +5,12 @@ namespace MystahCraft\SiteBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Rules
+ * TypesContenus
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Rules
+class TypesContenus
 {
     /**
      * @var integer
@@ -24,9 +24,9 @@ class Rules
     /**
      * @var string
      *
-     * @ORM\Column(name="regle", type="text")
+     * @ORM\Column(name="type", type="string", length=100)
      */
-    private $regle;
+    private $type;
 
 
     /**
@@ -40,25 +40,25 @@ class Rules
     }
 
     /**
-     * Set regles
+     * Set type
      *
-     * @param string $regles
-     * @return Rules
+     * @param string $type
+     * @return TypesContenus
      */
-    public function setRegle($regle)
+    public function setType($type)
     {
-        $this->regle = $regle;
+        $this->type = $type;
     
         return $this;
     }
 
     /**
-     * Get regles
+     * Get type
      *
      * @return string 
      */
-    public function getRegle()
+    public function getType()
     {
-        return $this->regle;
+        return $this->type;
     }
 }

@@ -3,8 +3,7 @@
 namespace MystahCraft\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use MystahCraft\SiteBundle\Entity\Rules;
-use MystahCraft\SiteBundle\Form\RulesType;
+use MystahCraft\SiteBundle\Entity\Contenus;
 
 class VoirController extends Controller
 {
@@ -17,14 +16,14 @@ class VoirController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
     	
-    	$rules = $em->getRepository("MystahCraftSiteBundle:Rules")->findAll();
+    	$rules = $em->getRepository("MystahCraftSiteBundle:Contenus")->findAll();
     	
     	return $this->render('MystahCraftAdminBundle:Voir:rules.html.twig', array(
     		'rules' => $rules
     	));
     }
     
-    public function ruleAction(Rules $rule)
+    public function ruleAction(Contenus $rule)
     {
     	return $this->render("MystahCraftAdminBundle:Voir:rule.html.twig", array(
     		'rule' => $rule

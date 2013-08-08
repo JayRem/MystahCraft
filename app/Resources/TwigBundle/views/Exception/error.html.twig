@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Erreur {{ status_text }}
+{% endblock %}
+
+{% block body %}
+ 	<h1 style="text-align: center;">Un erreur est survenue</h1>
+ 	<h2 style="text-align: center;">Le serveur a retourné une erreur "{{ status_code }} {{ status_text }}".</h2>
+{% endblock %}

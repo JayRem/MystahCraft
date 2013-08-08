@@ -6,24 +6,25 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class RulesType extends AbstractType
+class ContenusType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('regles')
+            ->add('valeur')
+            ->add('type')
         ;
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'MystahCraft\SiteBundle\Entity\Rules'
+            'data_class' => 'MystahCraft\SiteBundle\Entity\Contenus'
         ));
     }
 
     public function getName()
     {
-        return 'mystahcraft_sitebundle_rulestype';
+        return 'mystahcraft_sitebundle_contenustype';
     }
 }

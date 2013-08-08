@@ -3,8 +3,7 @@
 namespace MystahCraft\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use MystahCraft\SiteBundle\Entity\Rules;
-use MystahCraft\SiteBundle\Form\RulesType;
+use MystahCraft\SiteBundle\Entity\Contenus;
 
 class SupprimerController extends Controller
 {
@@ -13,7 +12,7 @@ class SupprimerController extends Controller
         return $this->render('MystahCraftAdminBundle:Default:index.html.twig', array('name' => $name));
     }
     
-    public function ruleAction(Rules $rule)
+    public function ruleAction(Contenus $rule)
     {
     	$this->render('MystahCraftAdminBundle:Supprimer:rule.html.twig', array(
     		'rule' => $rule
