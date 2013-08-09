@@ -42,6 +42,9 @@ class LoadContenusData implements FixtureInterface
 		
 		// Ip du serveur
 		
+		$ipServeur = new Contenus();
+		$ipServeur->setValeur("77.111.208.238:25565");
+		$types['ip-serveur']->addContenu($ipServeur);
 		
 		// Entête des règles
 		

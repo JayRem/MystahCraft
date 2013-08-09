@@ -21,6 +21,9 @@ class DefaultController extends Controller
     	$rules = $typeIp->getContenus();
     	$footerRules = $typeIp->getContenus();
     	$signRules = $typeIp->getContenus();
+    	
+    	var_dump($typeIp);
+    	
     	var_dump($ip->toArray());
     	var_dump($headerRules->toArray());
     	var_dump($rules->toArray());
@@ -32,9 +35,9 @@ class DefaultController extends Controller
         return $this->render('MystahCraftSiteBundle:Default:index.html.twig', array(
         	'rules' => $rules,
         	'ip' => $ip->get(0)->getValeur(),
-        	'header-rules' => $headerRules->get(0)->getValeur(),
-        	'footer-rules' => $footerRules->get(0)->getValeur(),
-        	'sign-rules' => $signRules->get(0)->getValeur()
+        	'header_rules' => $headerRules->get(0)->getValeur(),
+        	'footer_rules' => $footerRules->get(0)->getValeur(),
+        	'sign_rules' => $signRules->get(0)->getValeur()
         ));
     }
 
