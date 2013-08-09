@@ -35,10 +35,6 @@ class LoadContenusData implements FixtureInterface
 		$types['signature-regle'] = new TypesContenus();
 		$types['signature-regle']->setType('signature-regle');
 		
-		foreach ($types as $type)
-		{
-			$manager->persist($type);
-		}
 		
 		/*
 		 * Déclaration des contenus
@@ -51,8 +47,7 @@ class LoadContenusData implements FixtureInterface
 		
 		$regleEntete = new Contenus();
 		$regleEntete->setValeur("Règles du serveur");
-		$regleEntete->setType($types['entete-regle']);
-		$manager->persist($regleEntete);
+		$types['entete-regle']->addContenu($regleEntete);
 		
 		// Règles
 		
@@ -73,22 +68,23 @@ class LoadContenusData implements FixtureInterface
 		{
 			$regle = new Contenus();
 			$regle->setValeur($regleText);
-			$regle->setType($types['regle']);
-			$manager->persist($regle);
+			$types['regle']->addContenu($regle);
 		}
 		
 		// Pied des règles
 		
 		$reglePied= new Contenus();
 		$reglePied->setValeur("Mis a part ça, éclatez vous bien !");
-		$reglePied->setType($types['pied-regle']);
-		$manager->persist($reglePied);
+		$types['pied-regle']->addContenu($reglePied);
 		
 		$regleSignature = new Contenus();
 		$regleSignature->setValeur("Le roi et la reine");
-		$regleSignature->setType($types['signature-regle']);
-		$manager->persist($regleSignature);
+		$types['signature-regle']->addContenu($regleSignature);
 		
+		foreach ($types as $type)
+		{
+			$manager->persist($type);
+		}
 		/*
 		 * Flush de tous les contenus
 		 */

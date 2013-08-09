@@ -84,7 +84,7 @@ class TypesContenus
     public function addContenu(\MystahCraft\SiteBundle\Entity\Contenus $contenus)
     {
         $this->contenus[] = $contenus;
-    
+    	$contenus->setType($this);
         return $this;
     }
 
