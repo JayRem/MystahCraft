@@ -28,6 +28,12 @@ class TypesContenus
      */
     private $type;
 
+    /**
+     * @var \ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="MystahCraft\SiteBundle\Entity\Contenus", mappedBy="type", cascade={"persist"})
+     */
+    private $contenus;
 
     /**
      * Get id

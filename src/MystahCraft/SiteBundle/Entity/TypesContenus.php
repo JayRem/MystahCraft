@@ -28,6 +28,12 @@ class TypesContenus
      */
     private $type;
 
+    /**
+     * @var \ArrayCollection
+     * 
+     * @ORM\OneToMany(targetEntity="MystahCraft\SiteBundle\Entity\Contenus", mappedBy="type", cascade={"persist"})
+     */
+    private $contenus;
 
     /**
      * Get id
@@ -60,5 +66,45 @@ class TypesContenus
     public function getType()
     {
         return $this->type;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->contenus = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add contenus
+     *
+     * @param \MystahCraft\SiteBundle\Entity\Contenus $contenus
+     * @return TypesContenus
+     */
+    public function addContenu(\MystahCraft\SiteBundle\Entity\Contenus $contenus)
+    {
+        $this->contenus[] = $contenus;
+    
+        return $this;
+    }
+
+    /**
+     * Remove contenus
+     *
+     * @param \MystahCraft\SiteBundle\Entity\Contenus $contenus
+     */
+    public function removeContenu(\MystahCraft\SiteBundle\Entity\Contenus $contenus)
+    {
+        $this->contenus->removeElement($contenus);
+    }
+
+    /**
+     * Get contenus
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getContenus()
+    {
+        return $this->contenus;
     }
 }

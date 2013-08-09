@@ -10,10 +10,29 @@ class DefaultController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
     	
-    	$rules = $em->getRepository('MystahCraftSiteBundle:Contenus')->findAll();
+    	$typeIp = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('ip-serveur');
+    	$typeHeaderRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('entete-regle');
+    	$typeRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('regle');
+    	$typeFooterRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('pied-regle');
+    	$typeSignRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('signature-regle');
+    	
+    	$ip = $typeIp->getContenus();
+    	$headerRules = $typeIp->getContenus();
+    	$rules = $typeIp->getContenus();
+    	$footerRules = $typeIp->getContenus();
+    	$signRules = $typeIp->getContenus();
+    	var_dump($ip);
+    	var_dump($headerRules);
+    	var_dump($rules);
+    	var_dump($footerRules);
+    	var_dump($signRules);
     	
         return $this->render('MystahCraftSiteBundle:Default:index.html.twig', array(
-        	'rules' => $rules
+        	'rules' => $rules,
+        	'ip' => $ip[0]->getValeur(),
+        	'header-rules' => $headerRules[0]->getValeur(),
+        	'footer-rules' => $footerRules[0]->getValeur(),
+        	'sign-rules' => $signRules[0]->getValeur()
         ));
     }
 

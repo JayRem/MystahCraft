@@ -8,15 +8,19 @@
     </head>
     <body>
     	<header>
-    		<div id="header" class="main">
-    		<h1></h1>
-    <div id="auth">
-    	{% if app.user is not null and is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-    		<span id="login-name">Bonjour {{ app.user.username }}</span> <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
-    	{% else %}
-    		<a href="{{ path('fos_user_security_login') }}">Connexion</a>
-    	{% endif %}
-    </div>
+    		<div id="header">
+    			<div id="headerbg-left-right">
+	    			<div class="main">
+			    		<h1></h1>
+					    <div id="auth">
+					    	{% if app.user is not null and is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+					    		<span id="login-name">Bonjour {{ app.user.username }}</span> <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+					    	{% else %}
+					    		<a href="{{ path('fos_user_security_login') }}">Connexion</a>
+					    	{% endif %}
+					    </div>
+	    			</div>
+    			</div>
     		</div>
     		<menu>
     			<ul class="main">

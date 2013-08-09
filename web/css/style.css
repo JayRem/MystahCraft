@@ -31,18 +31,62 @@ body p
 
 header
 {
-	background: url("../images/header-background.jpg");
+	background: #7a3a33; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdhM2EzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iIzdhM2EzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQxJSIgc3RvcC1jb2xvcj0iIzMzNGYxZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzMzNGYxZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: -moz-linear-gradient(left,  #7a3a33 0%, #7a3a33 40%, #334f1e 41%, #334f1e 99%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7a3a33), color-stop(40%,#7a3a33), color-stop(41%,#334f1e), color-stop(99%,#334f1e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #7a3a33 0%,#7a3a33 40%,#334f1e 41%,#334f1e 99%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #7a3a33 0%,#7a3a33 40%,#334f1e 41%,#334f1e 99%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #7a3a33 0%,#7a3a33 40%,#334f1e 41%,#334f1e 99%); /* IE10+ */
+	background: linear-gradient(to right,  #7a3a33 0%,#7a3a33 40%,#334f1e 41%,#334f1e 99%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a3a33', endColorstr='#334f1e',GradientType=1 ); /* IE6-8 */
+	min-width: 980px;
+
+	position: relative;
+	width: 100%;
 }
+
 
 header #header
 {
-	height: 200px;
-	position: relative;
-	background: url('../images/header-mystahcraft.jpg')
+	height: 300px;
+	margin: 0 500px 0 300px;
+	background: #7a3a33; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdhM2EzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzMzNGYxZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+	background: -moz-linear-gradient(left,  #7a3a33 0%, #334f1e 99%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7a3a33), color-stop(99%,#334f1e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #7a3a33 0%,#334f1e 99%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #7a3a33 0%,#334f1e 99%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #7a3a33 0%,#334f1e 99%); /* IE10+ */
+	background: linear-gradient(to right,  #7a3a33 0%,#334f1e 99%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a3a33', endColorstr='#334f1e',GradientType=1 ); /* IE6-8 */
+
+	min-width: 180px;
+}
+
+header #header #headerbg-left-right
+{
+	position: absolute;
+	background-image: url("../images/left-header-mystahcraft.png"), url("../images/right-header-mystahcraft.png");
+	background-position: top left, top right;
+	background-repeat: no-repeat;
+	width: 100%;
+	min-width: 980px;
+	height: 300px;
+	left: 0;
+	
 }
 
 header #header h1
 {
+}
+
+#header .main
+{
+	position: relative;
+	height: 300px;
 }
 
 header #header #auth
@@ -51,10 +95,10 @@ header #header #auth
 	right : 5px;
 	bottom: 0;
 	padding: 5px 10px 5px 10px;
-	background: #cf903c;
-	border: #633e12 5px solid;
+	background: #b0a96e;
+	border: #c8c49a 5px solid;
     -webkit-border-radius: 5px;
-    border-radius: 20px 10px 10px 0;
+    border-radius: 20px 20px 0 0;
     color: #fff;
 }
 
@@ -65,7 +109,7 @@ header #header #auth #login-name
 
 header #header #auth a
 {
-	color: #831d1d;
+	color: #442b08;
 	text-decoration: none;
 	font-weight: 600;
 }

@@ -31,7 +31,7 @@ class Contenus
     /**
      * @var \TypesContenus
      * 
-     * @ORM\ManyToOne(targetEntity="MystahCraft\SiteBundle\Entity\TypesContenus")
+     * @ORM\ManyToOne(targetEntity="MystahCraft\SiteBundle\Entity\TypesContenus", inversedBy="contenus")
      */
     private $type;
 

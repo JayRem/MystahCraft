@@ -31,7 +31,7 @@ class Contenus
     /**
      * @var \TypesContenus
      * 
-     * @ORM\ManyToOne(targetEntity="MystahCraft\SiteBundle\Entity\TypesContenus")
+     * @ORM\ManyToOne(targetEntity="MystahCraft\SiteBundle\Entity\TypesContenus", inversedBy="contenus")
      */
     private $type;
 
@@ -67,5 +67,28 @@ class Contenus
     public function getValeur()
     {
         return $this->valeur;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \MystahCraft\SiteBundle\Entity\TypesContenus $type
+     * @return Contenus
+     */
+    public function setType(\MystahCraft\SiteBundle\Entity\TypesContenus $type = null)
+    {
+        $this->type = $type;
+    
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \MystahCraft\SiteBundle\Entity\TypesContenus 
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

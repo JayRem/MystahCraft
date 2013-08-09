@@ -6,11 +6,25 @@
 
 {% block body %}
 	<div id ="rules-mystah">
+		<div id ="adresse IP">
+			Adresse IP: {{ ip }}
+		</div>
+		<div id="header-rules">
+			{{ header_rules }}
+		</div>
 		{% for rule in rules %}
 			<div>
-				{{ rule.regle|nl2br }}
+				{{ rule.valeur|nl2br }}
 			</div>
 		{% endfor %}
+		
+		<div id="footer-rules">
+			{{ footer_rules }}
+		</div>
+		
+		<div id="sign-rules">
+			{{ sign_rules }}
+		</div>
 	</div>
 	<div id="index-content">
 		<h1>Bienvenue sur Mystah-Craft !</h1>
