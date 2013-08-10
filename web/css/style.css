@@ -102,7 +102,7 @@ header #header-logo #img-logo
 {
 	position: absolute;
 	left: 50%;
-	margin-left: -188px;
+	margin-left: -430px;
 	top: 0;
 	background: url("../images/DiamSword.png") no-repeat;
 }
@@ -111,7 +111,7 @@ header #header-logo #img-logo
 {
 	position: relative;
 	height: 300px;
-	width: 730px;
+	width: 930px;
 }
 
 header #header #auth
