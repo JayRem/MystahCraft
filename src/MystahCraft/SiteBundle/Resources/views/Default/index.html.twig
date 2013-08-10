@@ -6,17 +6,19 @@
 
 {% block body %}
 	<div id ="rules-mystah">
-		<div id ="adresse IP">
-			Adresse IP: {{ ip }}
+		<div id ="adresse-ip">
+			<strong>Adresse IP:</strong>  {{ ip }}
 		</div>
 		<div id="header-rules">
-			{{ header_rules }}
+			<h2>{{ header_rules }}</h2>
 		</div>
+		<ul>
 		{% for rule in rules %}
-			<div>
+			<li class="rule">
 				{{ rule.valeur|nl2br }}
-			</div>
+			</li>
 		{% endfor %}
+		</ul>
 		
 		<div id="footer-rules">
 			{{ footer_rules }}

@@ -17,18 +17,18 @@ class DefaultController extends Controller
     	$typeSignRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('signature-regle');
     	
     	$ip = $typeIp->getContenus();
-    	$headerRules = $typeIp->getContenus();
-    	$rules = $typeIp->getContenus();
-    	$footerRules = $typeIp->getContenus();
-    	$signRules = $typeIp->getContenus();
+    	$headerRules = $typeHeaderRules->getContenus();
+    	$rules = $typeRules->getContenus();
+    	$footerRules = $typeFooterRules->getContenus();
+    	$signRules = $typeSignRules->getContenus();
     	
-    	var_dump($typeIp);
+//     	var_dump($typeIp);
     	
-    	var_dump($ip->toArray());
-    	var_dump($headerRules->toArray());
-    	var_dump($rules->toArray());
-    	var_dump($footerRules->toArray());
-    	var_dump($signRules->toArray());
+//     	var_dump($ip->toArray());
+//     	var_dump($headerRules->toArray());
+//     	var_dump($rules->toArray());
+//     	var_dump($footerRules->toArray());
+//     	var_dump($signRules->toArray());
     	
     	//throw $this->createNotFoundException('Ceci est mon erreur !');
     	

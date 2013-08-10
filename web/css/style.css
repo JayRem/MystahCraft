@@ -29,6 +29,12 @@ body p
 	
 }
 
+.main
+{
+	width: 980px;
+	margin: auto;
+}
+
 header
 {
 	background: #7a3a33; /* Old browsers */
@@ -54,13 +60,13 @@ header #header
 	margin: 0 500px 0 300px;
 	background: #7a3a33; /* Old browsers */
 	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdhM2EzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijk5JSIgc3RvcC1jb2xvcj0iIzMzNGYxZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
-	background: -moz-linear-gradient(left,  #7a3a33 0%, #334f1e 99%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7a3a33), color-stop(99%,#334f1e)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(left,  #7a3a33 0%,#334f1e 99%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(left,  #7a3a33 0%,#334f1e 99%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(left,  #7a3a33 0%,#334f1e 99%); /* IE10+ */
-	background: linear-gradient(to right,  #7a3a33 0%,#334f1e 99%); /* W3C */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdhM2EzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iI2FmNTA0OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjU1JSIgc3RvcC1jb2xvcj0iIzY5N2MyZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzRmMWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(left,  #7a3a33 0%, #af5049 45%, #697c2f 55%, #334f1e 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#7a3a33), color-stop(45%,#af5049), color-stop(55%,#697c2f), color-stop(100%,#334f1e)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #7a3a33 0%,#af5049 45%,#697c2f 55%,#334f1e 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #7a3a33 0%,#af5049 45%,#697c2f 55%,#334f1e 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #7a3a33 0%,#af5049 45%,#697c2f 55%,#334f1e 100%); /* IE10+ */
+	background: linear-gradient(to right,  #7a3a33 0%,#af5049 45%,#697c2f 55%,#334f1e 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7a3a33', endColorstr='#334f1e',GradientType=1 ); /* IE6-8 */
 
 	min-width: 180px;
@@ -83,10 +89,29 @@ header #header h1
 {
 }
 
+header #header-logo
+{
+	margin-left: 300px;
+	margin-right: 400px;
+	height: 300px;
+	text-align: center;
+	position: relative;
+}
+
+header #header-logo #img-logo
+{
+	position: absolute;
+	left: 50%;
+	margin-left: -188px;
+	top: 0;
+	background: url("../images/DiamSword.png") no-repeat;
+}
+
 #header .main
 {
 	position: relative;
 	height: 300px;
+	width: 730px;
 }
 
 header #header #auth
@@ -114,11 +139,6 @@ header #header #auth a
 	font-weight: 600;
 }
 
-.main
-{
-	width: 980px;
-	margin: auto;
-}
 
 menu 
 {
@@ -185,8 +205,25 @@ menu ul:after
 
 #contenu #rules-mystah
 {
-	width: 20%;
+	width: 30%;
 	float: left;
+	position: relative;
+}
+
+#rules-mystah li.rule
+{
+	margin-top: 5px;
+}
+
+#rules-mystah #sign-rules
+{
+	text-align: right;
+	margin-top: 10px;
+}
+
+#rules-mystah #footer-rules
+{ 
+	margin-top: 10px;
 }
 
 #contenu #index-content
@@ -204,7 +241,7 @@ menu ul:after
 footer
 {
 	padding: 10px;
-	background: #8d8964
+	background: #8d8964;
 }
 
 footer #copyright
@@ -212,4 +249,5 @@ footer #copyright
 	color: #f8f6d8;
 	display: table;
 	margin: auto;
+	margin-bottom: 40px;
 }
