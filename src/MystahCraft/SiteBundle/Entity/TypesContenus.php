@@ -34,6 +34,13 @@ class TypesContenus
      * @ORM\OneToMany(targetEntity="MystahCraft\SiteBundle\Entity\Contenus", mappedBy="type", cascade={"persist"})
      */
     private $contenus;
+    
+    /**
+     * @var boolean
+     * 
+     * @ORM\Column(name="multiple", type="boolean")
+     */
+    private $multiple;
 
     /**
      * Get id
@@ -106,5 +113,28 @@ class TypesContenus
     public function getContenus()
     {
         return $this->contenus;
+    }
+
+    /**
+     * Set multiple
+     *
+     * @param boolean $multiple
+     * @return TypesContenus
+     */
+    public function setMultiple($multiple)
+    {
+        $this->multiple = $multiple;
+    
+        return $this;
+    }
+
+    /**
+     * Get multiple
+     *
+     * @return boolean 
+     */
+    public function getMultiple()
+    {
+        return $this->multiple;
     }
 }

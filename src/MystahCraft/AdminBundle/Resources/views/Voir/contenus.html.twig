@@ -9,10 +9,11 @@
 	{% for contenu in contenus %}
 	<ul>
 		<li>
-			<a href="{{ path('admin_modifier_contenu', { type : type,  id : contenu.id}) }}">Règle n°{{ contenu.id }}</a>
+			<a href="{{ path('admin_modifier_contenu', { id : contenu.id}) }}">Modifier {{ type }}{% if multiple %} n°{{ contenu.id }}{% endif %}</a>
 		</li>
 	</ul>
 	{% endfor %}
-	
-	<a href="{{ path('admin_ajouter_contenu', { type : type }) }}">Ajouter règle</a>
+	{% if multiple %}
+		<a href="{{ path('admin_ajouter_contenu', { type : type }) }}">Ajouter {{ type }}</a>
+	{% endif %}
 {% endblock %}

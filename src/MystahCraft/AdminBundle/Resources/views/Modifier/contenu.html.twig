@@ -2,16 +2,16 @@
 
 {% block stylesheets %}
 	{{ parent() }}
-	<link rel="stylesheet" href="{{ asset("niceforms/niceforms-default.css") }}"> 
+	<link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}"> 
 {% endblock %}
 
 {% block title %}
-	{{ parent() }} - Modifier règle n°{{ rule.id }}
+	{{ parent() }} - Modifier {{ contenu.type.type }}{% if contenu.type.multiple %} n°{{ contenu.id }}{% endif %}
 {% endblock %}
 
 {% block contenu %}
-	<h1>Modifier règle n°{{ rule.id }}</h1>
-	<form class="niceform" method="post"{{ form_enctype(form) }}>
+	<h1>Modifier {{ contenu.type.type }}{% if contenu.type.multiple %} n°{{ contenu.id }}{% endif %}</h1>
+	<form class="form-horizontal" method="post"{{ form_enctype(form) }}>
 		{{ form_errors(form) }}
 		{{ form_rest(form) }}
 		<div class="form-group">

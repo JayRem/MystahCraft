@@ -25,18 +25,23 @@ class LoadContenusData implements FixtureInterface, ContainerAwareInterface {
 
 		$types['ip-serveur'] = new TypesContenus();
 		$types['ip-serveur']->setType('ip-serveur');
+		$types['ip-serveur']->setMultiple(false);
 
 		$types['regle'] = new TypesContenus();
 		$types['regle']->setType('regle');
+		$types['regle']->setMultiple(true);
 
 		$types['entete-regle'] = new TypesContenus();
 		$types['entete-regle']->setType('entete-regle');
+		$types['entete-regle']->setMultiple(false);
 
 		$types['pied-regle'] = new TypesContenus();
 		$types['pied-regle']->setType('pied-regle');
+		$types['pied-regle']->setMultiple(false);
 
 		$types['signature-regle'] = new TypesContenus();
 		$types['signature-regle']->setType('signature-regle');
+		$types['signature-regle']->setMultiple(false);
 
 		/*
 		 * Déclaration des contenus

@@ -11,9 +11,7 @@ class ContenusType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('valeur')
-            ->add('type')
-        ;
+            ->add('valeur');
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

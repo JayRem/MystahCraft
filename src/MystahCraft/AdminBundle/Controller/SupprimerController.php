@@ -9,7 +9,7 @@ use MystahCraft\SiteBundle\Entity\TypesContenus;
 class SupprimerController extends Controller
 {
     
-    public function contenuAction(TypesContenus $type, Contenus $rule)
+    public function contenuAction(Contenus $rule)
     {
     	$this->render('MystahCraftAdminBundle:Supprimer:contenu.html.twig', array(
     		'rule' => $rule

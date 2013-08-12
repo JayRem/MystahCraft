@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block body %}
+	<h1>Ajouter {{ type }}</h1>
 	<form class="form-horizontal" method="post"{{ form_enctype(form) }}>
 		{{ form_errors(form) }}
 		{{ form_rest(form) }}

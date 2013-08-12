@@ -17,10 +17,10 @@ class ModifierController extends Controller
 	 * @param Contenus $rule
 	 * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
 	 */
-    public function contenusAction(TypesContenus $typeContenu, Contenus $rule)
+    public function contenusAction(Contenus $contenu)
     {	
     	$em = $this->getDoctrine()->getManager();
-    	$form = $this->createForm(new ContenusType(), $rule);
+    	$form = $this->createForm(new ContenusType(), $contenu);
     	
     	$request = $this->getRequest();
     	
@@ -33,19 +33,18 @@ class ModifierController extends Controller
     		$log->addInfo('Rules Binded');
     		if($form->isValid())
     		{
-    			$em->persist($rule);
+    			$em->persist($contenu);
     			$log->addInfo('Rules Valid');
     			$em->flush();
     		$log->addInfo('Rules Flushed');
     			
-    			return $this->redirect($this->generateUrl('admin_rules', array('type' => $typeContenu->getType())));
+    			return $this->redirect($this->generateUrl('admin_rules', array('type' => $contenu->getType()->getType())));
     		}
     	}
     	
     	return $this->render('MystahCraftAdminBundle:Modifier:contenu.html.twig', array(
-    		'type' => $typeContenu->getType(),
     		'form' => $form->createView(),
-    		'rule' => $rule
+    		'contenu' => $contenu
     	));
     }
 }

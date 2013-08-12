@@ -17,7 +17,6 @@ class VoirController extends Controller
     /**
      * 
      * @param TypesContenus $type
-     * @ParamConverter("type")
      */
     public function contenusAction(TypesContenus $typeContenu)
     {
@@ -27,11 +26,12 @@ class VoirController extends Controller
     	
     	return $this->render('MystahCraftAdminBundle:Voir:contenus.html.twig', array(
     		'type' => $typeContenu->getType(),
+    		'multiple' => $typeContenu->getMultiple(),
     		'contenus' => $contenus
     	));
     }
     
-    public function contenuAction(TypesContenus $typeContenu, Contenus $contenu)
+    public function contenuAction(Contenus $contenu)
     {
     	return $this->render("MystahCraftAdminBundle:Voir:contenu.html.twig", array(
     		'type' => $typeContenu->getType(),
