@@ -5,16 +5,18 @@ namespace MystahCraft\AdminBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use MystahCraft\SiteBundle\Entity\Contenus;
 use MystahCraft\SiteBundle\Form\ContenusType;
+use MystahCraft\SiteBundle\Entity\TypesContenus;
 
 class AjouterController extends Controller
 {    
-    public function rulesAction()
+    public function contenusAction(TypesContenus $type)
     {
     	$em = $this->getDoctrine()->getManager();
     	
-    	$rule = new Contenus();
+    	$contenu = new Contenus();
+    	$contenu->setType($type);
     	
-    	$form = $this->createForm(new ContenusType(), $rule);
+    	$form = $this->createForm(new ContenusType(), $contenu);
     	
     	$request = $this->getRequest();
     	
@@ -24,14 +26,14 @@ class AjouterController extends Controller
     		
     		if($form->isValid())
     		{
-    			$em->persist($rule);
+    			$em->persist($contenu);
     			$em->flush();
     			
     			return $this->redirect($this->generateUrl('admin_rules'));
     		}
     	}
     	
-    	return $this->render('MystahCraftAdminBundle:Ajouter:rule.html.twig', array(
+    	return $this->render('MystahCraftAdminBundle:Ajouter:contenu.html.twig', array(
     		'form' => $form->createView()
     	));
     }

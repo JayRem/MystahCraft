@@ -2,29 +2,34 @@ admin_homepage:
     pattern: /
     defaults: { _controller: "MystahCraftAdminBundle:Voir:index" }
     
-admin_rules:
-    pattern: /rules
-    defaults: { _controller: "MystahCraftAdminBundle:Voir:rules" }
-    
-admin_rule:
-    pattern: /rule/{id}
-    defaults: { _controller: "MystahCraftAdminBundle:Voir:rule" }
+admin_contenus:
+    pattern: /contenus/{type}
+    defaults: { _controller: "MystahCraftAdminBundle:Voir:contenus" }
     requirements:
+        type: .+
+    
+admin_contenu:
+    pattern: /contenu/{type}/{id}
+    defaults: { _controller: "MystahCraftAdminBundle:Voir:contenu" }
+    requirements:
+        type: .+
         id: \d+
 
-admin_ajouter_rule:
-    pattern:  /rules/ajouter
-    defaults: { _controller: "MystahCraftAdminBundle:Ajouter:rules" }
+admin_ajouter_contenu:
+    pattern:  /contenus/{type}/ajouter
+    defaults: { _controller: "MystahCraftAdminBundle:Ajouter:contenus" }
 
     
-admin_modifier_rule:
-    pattern:  /rules/modifier/{id}
-    defaults: { _controller: "MystahCraftAdminBundle:Modifier:rules" }
+admin_modifier_contenu:
+    pattern:  /contenus/{type}/modifier/{id}
+    defaults: { _controller: "MystahCraftAdminBundle:Modifier:contenus" }
     requirements:
+        type: .+
         id: \d+
         
-admin_supprimer_rule:
-    pattern:  /rules/supprimer/{id}
-    defaults: { _controller: "MystahCraftAdminBundle:Modifier:rules" }
+admin_supprimer_contenu:
+    pattern:  /contenus/{type}/supprimer/{id}
+    defaults: { _controller: "MystahCraftAdminBundle:Modifier:contenus" }
     requirements:
+        type: .+
         id: \d+

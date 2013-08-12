@@ -30,7 +30,9 @@
 {% block body %}
 	<ul>
 		<li><a href="{{ path('admin_homepage') }}">Administration</a></li>
-		<li><a href="{{ path('admin_rules') }}">Règles du serveur</a></li>
+		{% for typeContenu in typesContenusList() %}
+			<li><a href="{{ path('admin_contenus', { type : typeContenu.type }) }}">{{ typeContenu.type }}</a></li>
+		{% endfor %}
 	</ul>
 	{% block contenu %}
 	{% endblock %}

@@ -6,10 +6,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Monolog\Logger;
 use MystahCraft\SiteBundle\Entity\Contenus;
 use MystahCraft\SiteBundle\Form\ContenusType;
+use MystahCraft\SiteBundle\Entity\TypesContenus;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class ModifierController extends Controller
 {    
-    public function rulesAction(Contenus $rule)
+	/**
+	 * 
+	 * @param TypesContenus $typeContenu
+	 * @param Contenus $rule
+	 * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+	 */
+    public function contenusAction(TypesContenus $typeContenu, Contenus $rule)
     {	
     	$em = $this->getDoctrine()->getManager();
     	$form = $this->createForm(new ContenusType(), $rule);
@@ -30,11 +38,12 @@ class ModifierController extends Controller
     			$em->flush();
     		$log->addInfo('Rules Flushed');
     			
-    			return $this->redirect($this->generateUrl('admin_rules'));
+    			return $this->redirect($this->generateUrl('admin_rules', array('type' => $typeContenu->getType())));
     		}
     	}
     	
-    	return $this->render('MystahCraftAdminBundle:Modifier:rule.html.twig', array(
+    	return $this->render('MystahCraftAdminBundle:Modifier:contenu.html.twig', array(
+    		'type' => $typeContenu->getType(),
     		'form' => $form->createView(),
     		'rule' => $rule
     	));

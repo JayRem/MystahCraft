@@ -4,6 +4,8 @@ namespace MystahCraft\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use MystahCraft\SiteBundle\Entity\Contenus;
+use MystahCraft\SiteBundle\Entity\TypesContenus;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class VoirController extends Controller
 {
@@ -12,21 +14,28 @@ class VoirController extends Controller
         return $this->render('MystahCraftAdminBundle:Voir:index.html.twig');
     }
     
-    public function rulesAction()
+    /**
+     * 
+     * @param TypesContenus $type
+     * @ParamConverter("type")
+     */
+    public function contenusAction(TypesContenus $typeContenu)
     {
     	$em = $this->getDoctrine()->getManager();
     	
-    	$rules = $em->getRepository("MystahCraftSiteBundle:Contenus")->findAll();
+    	$contenus = $em->getRepository("MystahCraftSiteBundle:Contenus")->findByType($typeContenu);
     	
-    	return $this->render('MystahCraftAdminBundle:Voir:rules.html.twig', array(
-    		'rules' => $rules
+    	return $this->render('MystahCraftAdminBundle:Voir:contenus.html.twig', array(
+    		'type' => $typeContenu->getType(),
+    		'contenus' => $contenus
     	));
     }
     
-    public function ruleAction(Contenus $rule)
+    public function contenuAction(TypesContenus $typeContenu, Contenus $contenu)
     {
-    	return $this->render("MystahCraftAdminBundle:Voir:rule.html.twig", array(
-    		'rule' => $rule
+    	return $this->render("MystahCraftAdminBundle:Voir:contenu.html.twig", array(
+    		'type' => $typeContenu->getType(),
+    		'contenu' => $contenu
     	));
     }
 }

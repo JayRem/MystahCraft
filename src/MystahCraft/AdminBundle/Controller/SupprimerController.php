@@ -4,17 +4,14 @@ namespace MystahCraft\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use MystahCraft\SiteBundle\Entity\Contenus;
+use MystahCraft\SiteBundle\Entity\TypesContenus;
 
 class SupprimerController extends Controller
 {
-    public function indexAction($name)
-    {
-        return $this->render('MystahCraftAdminBundle:Default:index.html.twig', array('name' => $name));
-    }
     
-    public function ruleAction(Contenus $rule)
+    public function contenuAction(TypesContenus $type, Contenus $rule)
     {
-    	$this->render('MystahCraftAdminBundle:Supprimer:rule.html.twig', array(
+    	$this->render('MystahCraftAdminBundle:Supprimer:contenu.html.twig', array(
     		'rule' => $rule
     	));
     }

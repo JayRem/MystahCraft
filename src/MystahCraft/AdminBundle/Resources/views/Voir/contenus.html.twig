@@ -1,0 +1,18 @@
+{% extends 'MystahCraftAdminBundle::layout.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Page d'administration des rÃ¨gles
+{% endblock %}
+
+{% block contenu %}
+	<h1>Page d'administration des règles</h1>
+	{% for contenu in contenus %}
+	<ul>
+		<li>
+			<a href="{{ path('admin_modifier_contenu', { type : type,  id : contenu.id}) }}">Règle n°{{ contenu.id }}</a>
+		</li>
+	</ul>
+	{% endfor %}
+	
+	<a href="{{ path('admin_ajouter_contenu', { type : type }) }}">Ajouter règle</a>
+{% endblock %}
