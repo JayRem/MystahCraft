@@ -82,6 +82,17 @@ header #parchemin
 	top: 0;
 }
 
+header #parchemin-border
+{
+	position: absolute;
+	background: url("../images/parchemin-border.png");
+	height: 300px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+
 header #header #headerbg-left-right
 {
 	position: absolute;
@@ -127,7 +138,7 @@ header #header-logo #img-logo
 header #header #auth
 {
 	position: absolute;
-	right : 5px;
+	right : 0;
 	bottom: 0;
 	padding: 5px 10px 5px 10px;
 	background: #b0a96e;
@@ -135,6 +146,7 @@ header #header #auth
     -webkit-border-radius: 5px;
     border-radius: 20px 20px 0 0;
     color: #fff;
+    z-index: 2;
 }
 
 header #header #auth #login-name
