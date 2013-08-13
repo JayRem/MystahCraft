@@ -15,7 +15,7 @@ class DefaultController extends Controller
     	$typeRules = 		$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('regle');
     	$typeFooterRules = 	$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('pied-regle');
     	$typeSignRules = 	$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('signature-regle');
-    	$articles = 		$em->getRepository('MystahCraftSiteBundle:Articles')->findBy(null, array('date_publi', 'DESC', 5, 0));
+    	$articles = 		$em->getRepository('MystahCraftSiteBundle:Articles')->findBy(array(), array('datePubli' => 'DESC'), 5, 0);
     	
     	$ip = $typeIp->getContenus();
     	$headerRules = $typeHeaderRules->getContenus();
