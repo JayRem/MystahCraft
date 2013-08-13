@@ -3,6 +3,7 @@
 namespace MystahCraft\UserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Entity\User as BaseUser;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * User
@@ -23,7 +24,7 @@ class User extends BaseUser {
 	/**
 	 * @var \ArrayCollection
 	 * 
-	 * @ORM\ManyToMany(targetEntity="MystahCraft\UserBundle\Entity\Group")
+	 * @ORM\ManyToMany(targetEntity="MystahCraft\UserBundle\Entity\Group", inversedBy="users")
 	 * @ORM\JoinTable(name="fos_user_user_group",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="group_id", referencedColumnName="id")}
@@ -34,5 +35,6 @@ class User extends BaseUser {
 	public function __construct()
 	{
 		parent::__construct();
+		$this->groups = new ArrayCollection();
 	}
 }

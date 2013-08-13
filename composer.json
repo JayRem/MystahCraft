@@ -10,6 +10,7 @@
 		"doctrine/doctrine-fixtures-bundle" : "master-dev",
 		"friendsofsymfony/user-bundle" : "2.0.*@dev",
 		"symfony/swiftmailer-bundle" : "2.3.*",
+		"friendsofsymfony/comment-bundle" : "2.0.*@dev",
 		"doctrine/orm" : ">=2.2.3,<2.4-dev",
 		"doctrine/data-fixtures" : "master-dev",
 		"symfony/assetic-bundle" : "2.3.*",

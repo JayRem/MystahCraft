@@ -6,7 +6,7 @@ mystah_craft_site:
     resource: "@MystahCraftSiteBundle/Resources/config/routing.yml"
     prefix:   /
     
-#FOS routes
+#FOS User routes
     
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
@@ -14,7 +14,7 @@ fos_user_security:
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
     prefix: /profile
- 
+    
 fos_user_register:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
     prefix: /register
@@ -31,4 +31,9 @@ fos_user_group:
     resource: "@FOSUserBundle/Resources/config/routing/group.xml"
     prefix: /group
     
-
+#FOS Comment route
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }

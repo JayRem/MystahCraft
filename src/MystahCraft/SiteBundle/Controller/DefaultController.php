@@ -10,11 +10,12 @@ class DefaultController extends Controller
     {
     	$em = $this->getDoctrine()->getManager();
     	
-    	$typeIp = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('ip-serveur');
-    	$typeHeaderRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('entete-regle');
-    	$typeRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('regle');
-    	$typeFooterRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('pied-regle');
-    	$typeSignRules = $em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('signature-regle');
+    	$typeIp = 			$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('ip-serveur');
+    	$typeHeaderRules = 	$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('entete-regle');
+    	$typeRules = 		$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('regle');
+    	$typeFooterRules = 	$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('pied-regle');
+    	$typeSignRules = 	$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('signature-regle');
+    	$articles = 		$em->getRepository('MystahCraftSiteBundle:Articles')->findBy(null, array('date_publi', 'DESC', 5, 0));
     	
     	$ip = $typeIp->getContenus();
     	$headerRules = $typeHeaderRules->getContenus();
@@ -22,29 +23,25 @@ class DefaultController extends Controller
     	$footerRules = $typeFooterRules->getContenus();
     	$signRules = $typeSignRules->getContenus();
     	
-//     	var_dump($typeIp);
-    	
-//     	var_dump($ip->toArray());
-//     	var_dump($headerRules->toArray());
-//     	var_dump($rules->toArray());
-//     	var_dump($footerRules->toArray());
-//     	var_dump($signRules->toArray());
-    	
-    	//throw $this->createNotFoundException('Ceci est mon erreur !');
-    	
         return $this->render('MystahCraftSiteBundle:Default:index.html.twig', array(
         	'rules' => $rules,
         	'ip' => $ip->get(0)->getValeur(),
         	'header_rules' => $headerRules->get(0)->getValeur(),
         	'footer_rules' => $footerRules->get(0)->getValeur(),
-        	'sign_rules' => $signRules->get(0)->getValeur()
+        	'sign_rules' => $signRules->get(0)->getValeur(),
+        	'articles' => $articles
         ));
     }
 
     public function joueursAction()
     {
-
-    	return $this->render('MystahCraftSiteBundle:Default:joueurs.html.twig');
+		$em = $this->getDoctrine()->getManager();
+		
+		$listeGroupes = $em->getRepository("MystahCraftUserBundle:Group")->findAll();
+		
+    	return $this->render('MystahCraftSiteBundle:Default:joueurs.html.twig', array(
+    		'groupes' => $listeGroupes
+    	));
     }
     
     public function histoireAction()
@@ -63,5 +60,10 @@ class DefaultController extends Controller
     {
 
     	return $this->render('MystahCraftSiteBundle:Default:liens.html.twig');
+    }
+    
+    public function articleAction()
+    {
+    	
     }
 }

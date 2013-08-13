@@ -21,6 +21,9 @@ class AppKernel extends Kernel
             new MystahCraft\UserBundle\MystahCraftUserBundle(),
         	new FOS\UserBundle\FOSUserBundle(),
         	new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+        	new FOS\RestBundle\FOSRestBundle(),
+        	new FOS\CommentBundle\FOSCommentBundle(),
+        	new JMS\SerializerBundle\JMSSerializerBundle($this),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,9 @@
+{% extends 'MystahCraftSiteBundle::layout.html.twig' %}
+
+{% block title %}
+	{{ parent() }} - Article {{ article.slug }}
+{% endblock %}
+
+{% block body %}
+	<h1>{{ article.title }}</h1>
+{% endblock %}

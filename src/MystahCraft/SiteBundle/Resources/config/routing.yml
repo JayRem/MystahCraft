@@ -17,3 +17,7 @@ mystah_craft_site_screen:
 mystah_craft_site_liens:
     pattern:  /liens
     defaults: { _controller: "MystahCraftSiteBundle:Default:liens" }
+    
+mystah_craft_site_article:
+    pattern: /article/{slug}
+    defaults: { _controller: "MystahCraftSiteBundle:Default:article" }

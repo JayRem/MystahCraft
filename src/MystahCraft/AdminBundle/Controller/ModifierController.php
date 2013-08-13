@@ -16,8 +16,10 @@ class ModifierController extends Controller
 	 * @param TypesContenus $typeContenu
 	 * @param Contenus $rule
 	 * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+	 * @ParamConverter("typeContenu", options={"mapping" ={"type" = "type"})
+	 * @ParamConverter("contenu", options={"mapping" ={"id" = "id"})
 	 */
-    public function contenusAction(Contenus $contenu)
+    public function contenusAction(TypesContenus $typeContenu, Contenus $contenu)
     {	
     	$em = $this->getDoctrine()->getManager();
     	$form = $this->createForm(new ContenusType(), $contenu);

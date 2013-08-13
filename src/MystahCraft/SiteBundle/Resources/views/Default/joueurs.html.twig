@@ -5,6 +5,16 @@
 {% endblock %}
 
 {% block body %}
-	Joueurs
+	<h1>Joueurs</h1>
+	<ul>
+	{% for groupe in groupes %}
+		<li>{{ groupe.name }}
+			<ul>
+			{% for user in groupe.users %}
+				<li>{{ user.username }}</li>
+			{% endfor %}
+			</ul>
+		</li>
+	{% endfor %}
 {% endblock %}
 

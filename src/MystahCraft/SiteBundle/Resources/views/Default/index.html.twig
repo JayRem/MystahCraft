@@ -4,6 +4,17 @@
 	{{ parent() }} - Accueil
 {% endblock %}
 
+{% block description %}
+	Mystahcraft est une communauté mettant à disposition un serveur Minecraft 100% survie, sans mod, sans plugin dans un univers médiéval.
+	L'inscription est gratuite, les slots sont illimités !
+	Vous êtes tous invités à nous rejoindre, à condition de respecter la bonne humeur qui règne depuis de nombreux mois. Notre
+	communauté est petite, sans prétention, mais vous apprécierai la richesse de son univers !
+{% endblock %}
+
+{% block tags %}
+	mystahcraft, serveur, minecraft, survie, gratuit, médiéval, français, 
+{% endblock %}
+
 {% block body %}
 	<div id ="rules-mystah">
 		<div id ="adresse-ip">
@@ -31,5 +42,11 @@
 	<div id="index-content">
 		<h1>Bienvenue sur Mystah-Craft !</h1>
 		<h2>Vous êtes sur le point de découvrir le monde de Mystalia</h2>
+		<div id="articles-mystah">
+			{% for article in articles %}
+				<h2 id="{{ article.slug }}-title">{{ article.title }}</h2>
+				<div id="{{ article.slug }}-content">{{ article.content }}</div>
+			{% endfor %}
+		</div>
 	</div>
 {% endblock %}

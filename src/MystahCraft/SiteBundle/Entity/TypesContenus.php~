@@ -114,4 +114,27 @@ class TypesContenus
     {
         return $this->contenus;
     }
+
+    /**
+     * Set multiple
+     *
+     * @param boolean $multiple
+     * @return TypesContenus
+     */
+    public function setMultiple($multiple)
+    {
+        $this->multiple = $multiple;
+    
+        return $this;
+    }
+
+    /**
+     * Get multiple
+     *
+     * @return boolean 
+     */
+    public function getMultiple()
+    {
+        return $this->multiple;
+    }
 }
