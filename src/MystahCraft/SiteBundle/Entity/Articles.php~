@@ -3,12 +3,13 @@
 namespace MystahCraft\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Articles
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MystahCraft\SiteBundle\Entity\ArticleRepository")
  */
 class Articles
 {
@@ -38,6 +39,7 @@ class Articles
     /**
      * @var string
      *
+     * @Gedmo\Slug(fields={"title"})
      * @ORM\Column(name="slug", type="string", length=100)
      */
     private $slug;
@@ -69,13 +71,11 @@ class Articles
      * @ORM\Column(name="description", type="string", length=160)
      */
     private $description;
-    
-    /**
-     * @var MystahCraft\SiteBundle\Entity\Thread
-     * @ORM\OneToOne(targetEntity="MystahCraft\SiteBundle\Entity\Thread")
-     */
-    private $thread;
 
+    public function __construct()
+    {
+    	$this->datePubli = new \DateTime();
+    }
 
     /**
      * Get id
@@ -246,5 +246,28 @@ class Articles
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set thread
+     *
+     * @param \MystahCraft\SiteBundle\Entity\Thread $thread
+     * @return Articles
+     */
+    public function setThread(\MystahCraft\SiteBundle\Entity\Thread $thread = null)
+    {
+        $this->thread = $thread;
+    
+        return $this;
+    }
+
+    /**
+     * Get thread
+     *
+     * @return \MystahCraft\SiteBundle\Entity\Thread 
+     */
+    public function getThread()
+    {
+        return $this->thread;
     }
 }

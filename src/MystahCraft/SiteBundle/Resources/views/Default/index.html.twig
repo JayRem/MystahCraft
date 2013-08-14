@@ -44,9 +44,19 @@
 		<h2>Vous êtes sur le point de découvrir le monde de Mystalia</h2>
 		<div id="articles-mystah">
 			{% for article in articles %}
-				<h2 id="{{ article.slug }}-title">{{ article.title }}</h2>
-				<div id="{{ article.slug }}-content">{{ article.content }}</div>
+				<div class="article">
+					<h2 id="{{ article.slug }}-title">{{ article.title }}</h2>
+					<div id="{{ article.slug }}-content">{{ article.apercu }}</div>
+				</div>
 			{% endfor %}
+			<div id="pagination">
+				{% if page > 1 %}
+					<div id="articles-recents"><a href="{{ path('mystah_craft_site_homepage', { 'page' : page - 1 }) }}">Articles plus récents</a></div>
+				{% endif %}
+				{% if nb_pages > page %}
+					<div id="articles-anciens"><a href="{{ path('mystah_craft_site_homepage', { 'page' : page + 1 }) }}">Articles plus anciens</a></div>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 {% endblock %}

@@ -8,20 +8,26 @@
 
 body
 {
-	font-family: arial;
-	font-size: 12px;
+	font-family: arial, helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	
 	background: #8d8964;
 	color: #9a6213;
 }
 
 body h1
 {
+	font-size: 1.5em;
 	color: #442b08;
+	margin-bottom: 1.5em;
 }
 
 body h2
 {
+	font-size: 1.325em;
 	color: #6b440b;
+	margin-bottom: 1em;
 }
 
 body p
@@ -137,6 +143,8 @@ header #header-logo #img-logo
 
 header #header #auth
 {
+	font-size: 12px;
+	line-height: 1em;
 	position: absolute;
 	right : 0;
 	bottom: 0;
@@ -164,6 +172,8 @@ header #header #auth a
 
 menu 
 {
+	font-size: 14px;
+	line-height:1em;
 	background: url('../images/frise-menu.png');
 }
 
@@ -223,18 +233,29 @@ menu ul:after
 #contenu
 {
 	padding: 20px;
+	padding-top: 30px;
 }
 
 #contenu #rules-mystah
 {
+	font-size: 12px;
 	width: 30%;
 	float: left;
 	position: relative;
 }
 
+#rules-mystah #adresse-ip
+{
+	margin-bottom: 20px;
+}
+
 #rules-mystah li.rule
 {
-	margin-top: 5px;
+	margin-top: 8px;
+	list-style: decimal;
+	list-style-position: 0;
+	margin-left: 22px;
+	text-align: justify;
 }
 
 #rules-mystah #sign-rules
@@ -250,6 +271,45 @@ menu ul:after
 
 #contenu #index-content
 {
+	margin-left: 32%;
+}
+
+#articles-mystah
+{
+	padding: 10px;
+}
+
+#articles-mystah .article
+{
+	margin-top: 5px;
+	padding: 10px;
+	text-align: justify;
+}
+
+#pagination
+{
+	margin-top: 30px;
+	width: 100%;
+}
+
+#pagination #articles-recents
+{
+	float: left;	
+}
+
+#pagination #articles-anciens
+{
+	float: right;	
+}
+
+#pagination:after
+{
+	content: '.';
+	clear: both;
+	display: block;
+	visibility: hidden;
+	height: 0;
+	line-height: 0;
 }
 
 #contenu:AFTER

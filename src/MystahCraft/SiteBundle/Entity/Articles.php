@@ -3,12 +3,13 @@
 namespace MystahCraft\SiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Articles
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="MystahCraft\SiteBundle\Entity\ArticleRepository")
  */
 class Articles
 {
@@ -38,6 +39,7 @@ class Articles
     /**
      * @var string
      *
+     * @Gedmo\Slug(fields={"title"})
      * @ORM\Column(name="slug", type="string", length=100)
      */
     private $slug;
@@ -52,7 +54,7 @@ class Articles
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modif", type="datetime")
+     * @ORM\Column(name="date_modif", type="datetime", nullable=true)
      */
     private $dateModif;
 
@@ -66,15 +68,9 @@ class Articles
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=160)
+     * @ORM\Column(name="description", type="string", length=160, nullable=true)
      */
     private $description;
-    
-    /**
-     * @var MystahCraft\SiteBundle\Entity\Thread
-     * @ORM\OneToOne(targetEntity="MystahCraft\SiteBundle\Entity\Thread")
-     */
-    private $thread;
 
     public function __construct()
     {
@@ -251,27 +247,10 @@ class Articles
     {
         return $this->description;
     }
-
-    /**
-     * Set thread
-     *
-     * @param \MystahCraft\SiteBundle\Entity\Thread $thread
-     * @return Articles
-     */
-    public function setThread(\MystahCraft\SiteBundle\Entity\Thread $thread = null)
-    {
-        $this->thread = $thread;
     
-        return $this;
-    }
-
-    /**
-     * Get thread
-     *
-     * @return \MystahCraft\SiteBundle\Entity\Thread 
-     */
-    public function getThread()
+    public function getApercu()
     {
-        return $this->thread;
+    	$apercu = substr($this->content, 0, 350);
+    	return substr($apercu, 0, strrpos($apercu, " ")) . " ...";
     }
 }

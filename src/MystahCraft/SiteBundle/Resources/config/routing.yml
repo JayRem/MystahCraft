@@ -1,6 +1,8 @@
 mystah_craft_site_homepage:
-    pattern:  /
-    defaults: { _controller: "MystahCraftSiteBundle:Default:index" }
+    pattern:  /{page}
+    defaults: { _controller: "MystahCraftSiteBundle:Default:index", page:1 }
+    requirements:
+        page: \d+
 
 mystah_craft_site_joueurs:
     pattern:  /joueurs

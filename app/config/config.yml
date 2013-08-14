@@ -80,3 +80,9 @@ fos_comment:
         model:
             comment: MystahCraft\SiteBundle\Entity\Comment
             thread: MystahCraft\SiteBundle\Entity\Thread
+            
+#Doctrine Extensions Configuration
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true

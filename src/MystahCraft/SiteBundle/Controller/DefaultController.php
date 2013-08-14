@@ -3,10 +3,11 @@
 namespace MystahCraft\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function indexAction($page)
     {
     	$em = $this->getDoctrine()->getManager();
     	
@@ -15,7 +16,7 @@ class DefaultController extends Controller
     	$typeRules = 		$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('regle');
     	$typeFooterRules = 	$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('pied-regle');
     	$typeSignRules = 	$em->getRepository('MystahCraftSiteBundle:TypesContenus')->findOneByType('signature-regle');
-    	$articles = 		$em->getRepository('MystahCraftSiteBundle:Articles')->findBy(array(), array('datePubli' => 'DESC'), 5, 0);
+    	$articles = 		$em->getRepository('MystahCraftSiteBundle:Articles')->getArticles(6, $page);
     	
     	$ip = $typeIp->getContenus();
     	$headerRules = $typeHeaderRules->getContenus();
@@ -23,13 +24,16 @@ class DefaultController extends Controller
     	$footerRules = $typeFooterRules->getContenus();
     	$signRules = $typeSignRules->getContenus();
     	
+    	
         return $this->render('MystahCraftSiteBundle:Default:index.html.twig', array(
         	'rules' => $rules,
         	'ip' => $ip->get(0)->getValeur(),
         	'header_rules' => $headerRules->get(0)->getValeur(),
         	'footer_rules' => $footerRules->get(0)->getValeur(),
         	'sign_rules' => $signRules->get(0)->getValeur(),
-        	'articles' => $articles
+        	'articles' => $articles,
+        	'page' => $page,
+        	'nb_pages' => ceil(count($articles)/6)
         ));
     }
 
