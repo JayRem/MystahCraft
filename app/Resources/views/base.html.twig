@@ -5,7 +5,12 @@
         <meta name="description" content="{% block description %}{% endblock %}">
         <meta name="keywords" content="{% block tags %}{% endblock %}">
         <title>{% block title %}Mystah-Craft{% endblock %}</title>
-        {% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">{% endblock %}
+        {% block stylesheets %}
+        	<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+        {% endblock %}
+        {% stylesheets '@FOSCommentBundle/Resources/assets/css/comments.css' %}
+			<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+		{% endstylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -56,8 +61,8 @@
         	</div>
         </footer>
         {% block javascripts %}
-			<script src="js/jquery-1.9.1.js"></script>
-			<script src="js/jquery-ui-1.10.3.custom.js"></script>
+		<script src="{{ asset('js/jquery-1.9.1.js') }}"></script>
+		<script src="{{ asset("js/jquery-ui-1.10.3.custom.js") }}"></script>        
         {% endblock %}
     </body>
 </html>

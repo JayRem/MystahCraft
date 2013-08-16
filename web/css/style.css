@@ -239,7 +239,7 @@ menu ul:after
 #contenu #rules-mystah
 {
 	font-size: 12px;
-	width: 30%;
+	width: 25%;
 	float: left;
 	position: relative;
 }
@@ -254,7 +254,7 @@ menu ul:after
 	margin-top: 8px;
 	list-style: decimal;
 	list-style-position: 0;
-	margin-left: 22px;
+	margin-left: 17px;
 	text-align: justify;
 }
 
@@ -271,7 +271,7 @@ menu ul:after
 
 #contenu #index-content
 {
-	margin-left: 32%;
+	margin-left: 27%;
 }
 
 #articles-mystah

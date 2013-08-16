@@ -4,6 +4,7 @@ namespace MystahCraft\SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Doctrine\ORM\Tools\Pagination\Paginator;
+use MystahCraft\SiteBundle\Entity\Articles;
 
 class DefaultController extends Controller
 {
@@ -62,12 +63,14 @@ class DefaultController extends Controller
 
     public function liensAction()
     {
-
+		
     	return $this->render('MystahCraftSiteBundle:Default:liens.html.twig');
     }
     
-    public function articleAction()
+    public function articleAction(Articles $article)
     {
-    	
+    	return $this->render('MystahCraftSiteBundle:Default:article.html.twig', array(
+    		'article' => $article
+    	));
     }
 }

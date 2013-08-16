@@ -1,9 +1,15 @@
 {% extends 'MystahCraftSiteBundle::layout.html.twig' %}
 
 {% block title %}
-	{{ parent() }} - Article {{ article.slug }}
+	{{ parent() }} - {{ article.title }}
 {% endblock %}
 
 {% block body %}
 	<h1>{{ article.title }}</h1>
+	<div id="contenu-article">
+		{{ article.content }}
+	</div>
+	<div id="commentaires-article">
+		{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': article.slug} %}
+	</div>
 {% endblock %}

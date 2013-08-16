@@ -46,7 +46,10 @@
 			{% for article in articles %}
 				<div class="article">
 					<h2 id="{{ article.slug }}-title">{{ article.title }}</h2>
-					<div id="{{ article.slug }}-content">{{ article.apercu }}</div>
+					<div id="{{ article.slug }}-content">
+						{{ article.apercu }}
+						<a href="{{ path("mystah_craft_site_article", { slug : article.slug }) }}">Lire la suite</a>
+					</div>
 				</div>
 			{% endfor %}
 			<div id="pagination">
