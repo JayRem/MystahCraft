@@ -170,26 +170,26 @@ header #header #auth a
 }
 
 
-menu 
+nav 
 {
 	font-size: 14px;
 	line-height:1em;
 	background: url('../images/frise-menu.png');
 }
 
-menu ul
+nav ul
 {
 	list-style: none;
 	height: 30px;
 }
 
-menu ul li
+nav ul li
 {
 	float: left;
 	margin: 3px 10px 0 0;
 }
 
-menu ul li a
+nav ul li a
 {
 	font-weight: bold;
 	color: #fdf8ad;
@@ -203,14 +203,14 @@ menu ul li a
     border-radius: 5px;
 }
 
-menu ul li a:hover
+nav ul li a:hover
 {
 	color: #fff;
 	-webkit-box-shadow: inset 3px 2px 20px 0px rgba(0, 0, 0, 0.5);
 	box-shadow: inset 3px 2px 20px 0px rgba(0, 0, 0, 0.5);
 }
 
-menu ul:after
+nav ul:after
 {
 	content: '.';
 	display: block;
