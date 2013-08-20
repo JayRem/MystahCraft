@@ -44,9 +44,9 @@
 		<h2>Vous êtes sur le point de découvrir le monde de Mystalia</h2>
 		<div id="articles-mystah">
 			{% for article in articles %}
-				<div class="article">
+				<article class="article">
 					<div class="date-article">
-						<p><b>Rédigé</b> le {{ article.datePubli | localizeddate('full', 'none') }}</p>
+						<p><b>Rédigé</b> le {{ article.datePubli | localizeddate('full', 'full') }}</p>
 						{% if article.dateModif is not null %}
 							<p><b>Modifié</b> le {{ article.dateModif | localizeddate('full', 'full') }}</p>
 						{% endif %}
@@ -57,7 +57,7 @@
 						<a href="{{ path("mystah_craft_site_article", { slug : article.slug }) }}">Lire la suite</a>
 						<div class="nb-commentaires">{{ nbCommentaires(article.slug) }}</div>
 					</div>
-				</div>
+				</article>
 			{% endfor %}
 			<div id="pagination">
 				{% if page > 1 %}
