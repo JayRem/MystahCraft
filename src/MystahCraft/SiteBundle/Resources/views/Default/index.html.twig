@@ -45,10 +45,17 @@
 		<div id="articles-mystah">
 			{% for article in articles %}
 				<div class="article">
+					<div class="date-article">
+						<p><b>Rédigé</b> le {{ article.datePubli | localizeddate('full', 'none') }}</p>
+						{% if article.dateModif is not null %}
+							<p><b>Modifié</b> le {{ article.dateModif | localizeddate('full', 'full') }}</p>
+						{% endif %}
+					</div>
 					<h2 id="{{ article.slug }}-title">{{ article.title }}</h2>
 					<div id="{{ article.slug }}-content">
 						{{ article.apercu }}
 						<a href="{{ path("mystah_craft_site_article", { slug : article.slug }) }}">Lire la suite</a>
+						<div class="nb-commentaires">{{ nbCommentaires(article.slug) }}</div>
 					</div>
 				</div>
 			{% endfor %}

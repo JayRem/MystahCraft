@@ -283,7 +283,24 @@ nav ul:after
 {
 	margin-top: 5px;
 	padding: 10px;
+	padding-bottom: 0;
 	text-align: justify;
+	border: #6b440b 1px solid;
+	background: #F2F0C7;
+}
+
+.article .date-article
+{
+	float: right;
+	font-size: 10px;
+	text-align: right;
+	line-height: 1.2em;
+}
+
+.article .nb-commentaires
+{
+	font-size: 12px;
+	text-align: right;
 }
 
 #pagination

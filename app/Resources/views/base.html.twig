@@ -58,7 +58,9 @@
 	        </div>
         </div>
         <footer class="main">
-        	<a href="{{ path('admin_homepage') }}">Administration</a>
+        	{% if app.user is not null and is_granted("ROLE_ADMIN") %}
+        		<a href="{{ path('admin_homepage') }}">Administration</a>
+        	{% endif %}
         	<div id="copyright">
         		&copy; Copyright 2013 Mystah-Craft. Site réalisé par Jérémy Safont.
         	</div>
